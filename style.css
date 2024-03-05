@@ -1,0 +1,200 @@
+:root {
+/* Primary */
+    --Red: hsl(1, 90%, 64%);
+    --Blue: hsl(219, 85%, 26%);
+/* Neutral  */
+    ---white: hsl(0, 0%, 100%);
+    --verylightgrayishblue: hsl(210, 60%, 98%);
+    --lightgrayishblue1: hsl(211, 68%, 94%);
+    --lightgrayishblue2: hsl(205, 33%, 90%);
+    --grayishblue: hsl(219, 14%, 63%);
+    --darkgrayishblue: hsl(219, 12%, 42%);
+    --verydarkblue: hsl(224, 21%, 14%);
+}
+
+@font-face {
+    font-family: "PlusJakartaSans";
+    src: url("assets/fonts/PlusJakartaSans-VariableFont_wght.ttf") format("truetype");
+    display: swap;
+    font-weight: 100 900;
+}
+
+*,*:before, *:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+body {
+    display: grid;
+    place-content: center;
+    height: 100vh;
+    background-color:var(--lightgrayishblue1);
+    font-size: 16px;
+    font-family: "PlusJakartaSans";
+}
+
+
+.main-container {
+    max-width: 50rem;
+    padding: 2rem 2rem .5rem 2rem;
+    margin-inline: 2rem;
+    border-radius: 1rem;
+    background-color: var(---white);   
+    box-shadow: 0 0 1rem .5rem var(--lightgrayishblue1);
+}
+
+
+.title-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    
+    h1 {
+        font-size: 1.5rem;
+        font-weight: 900;
+        
+        #notificationNumber {
+            padding: .1rem .4rem .1rem .4rem;
+            border-radius: .3rem;
+            background-color: var(--Blue);
+            color:var(---white);
+            font-size: 1rem;
+        }
+    }
+    
+    h2 {
+        font-size: 1rem;
+        color: var(--darkgrayishblue);
+        font-weight: 500;
+        cursor: pointer;
+    }
+    
+    h2:hover {
+        color: var(--Blue);
+    }
+    
+}
+
+.messages {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* It's a good practice to nest like this or it is excessive?? It reminds me of the callback hell */
+.message {
+    display:flex;
+    /* We need this to push the img to the right */
+    flex-grow: 1;
+    
+    gap: 1rem;
+    margin: .2rem;
+    padding: .8rem;
+    border-radius: .5rem;
+
+    
+    .avatar img{
+        width: 3rem;
+        aspect-ratio: 1/1;
+    }
+
+
+    .text {
+        display: flex;
+        flex-direction: column;
+        cursor:pointer;
+
+        .name{
+            font-weight: 800;
+        }
+
+        .name:hover {
+            color:var(--Blue);
+        }
+
+
+        .time-ago {
+            color: var(--grayishblue);
+            font-weight: 500;
+        }
+
+
+        .dot {
+            display: inline-block;
+
+            width: .5rem;
+            aspect-ratio: 1/1;
+            margin-left: .4rem;
+
+            border-radius: 50%;
+            
+            background-color: var(--Red);
+
+        }
+
+
+        .remove {
+            display:none;
+        }
+
+
+        .chess-club {
+            color: var(--Blue);
+            font-weight: 800;
+            cursor: pointer;
+        }
+
+        .chess-club:hover {
+            color: var(--Blue);
+        }
+
+
+        .gray-sentence {
+            color: var(--darkgrayishblue);
+            font-weight: 800;
+            cursor: pointer;
+        }
+
+        .gray-sentence:hover {
+            color: var(--Blue);
+        }
+
+
+        #comment {
+            margin-top: 1rem;
+            padding: 1rem;
+            border: 1px solid var(--lightgrayishblue2);
+            border-radius: .5rem;
+
+            color: var(--darkgrayishblue);
+            font-weight: 500;
+
+            cursor: pointer;
+        }
+
+        #comment:hover {
+            background-color: var(--lightgrayishblue1);
+        }
+    }
+
+    .chess-image img {
+        align-self: flex-end;
+        width: 3rem;
+        aspect-ratio: 1/1;
+        cursor:pointer;
+
+    }
+
+
+    .push-right {
+        margin-left: auto;
+    }
+}
+
+.message:nth-child(-n + 3) {
+    background-color: var(--verylightgrayishblue);
+}
